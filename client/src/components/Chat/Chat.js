@@ -6,7 +6,7 @@ import './Chat.css'
 const Chat = ({ location }) => {
   const [name, setName] = useState('')
   const [room, setRoom] = useState('')
-  const ENDPOINT = 'http://localhost:3000/'
+  const ENDPOINT = 'localhost:5000'
 
   useEffect(() => {
     const { name, room } = queryString.parse(
@@ -18,10 +18,12 @@ const Chat = ({ location }) => {
     setName(name)
     setRoom(room)
 
-    socket.emit('join', { name, room }, ({}) => {})
+    console.log(socket)
+
+    socket.emit('join', { name, room }, () => {})
 
     return () => {
-      socket.io('disconnect')
+      socket.emit('disconnect')
       socket.off()
     }
   }, [ENDPOINT, location.search])

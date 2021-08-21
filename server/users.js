@@ -1,9 +1,41 @@
 const users = []
 
-const addUser = () => {}
+const addUser = ({ id, name, room }) => {
+  name = name.trim().toLowerCase()
+  room = room.trim().toLowerCase()
 
-const removeUser = () => {}
+  const existingUser = users.find(
+    (user) => user.room === room && user.name === name
+  )
+  if (existingUser) {
+    return { error: 'Username already taken' }
+  }
 
-const getUsersInRoom = () => {
-  // https://youtu.be/ZwFA3YMfkoc?t=3307
+  const user = { id, name, room }
+  users.push(user)
+
+  return user
+}
+
+const removeUser = (id) => {
+  const index = users.findIndex((user) => user.id === id)
+
+  if (index !== -1) {
+    users.splice(index, 1)[0]
+  }
+}
+
+const getUser = (id) => {
+  users.find((user) => user.id === id)
+}
+
+const getUsersInRoom = (room) => {
+  users.filter((user) => user.room === room)
+}
+
+export default {
+  addUser,
+  removeUser,
+  getUser,
+  getUserInRoom,
 }
