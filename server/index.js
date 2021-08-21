@@ -2,11 +2,12 @@ const express = require('express')
 const socketio = require('socket.io')
 const http = require('http')
 const router = require('./router')
+const cors = require('cors')
 const {
   addUser,
   removeUser,
   getUser,
-  getUserInRoom,
+  getUsersInRoom,
 } = require('./users')
 
 const app = express()
