@@ -1,5 +1,7 @@
 # Socket Chat
 
+![LOGO](client/public/logo512.png)
+
 ## Demo
 
 ## Available Scripts
