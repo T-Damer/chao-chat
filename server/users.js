@@ -7,6 +7,10 @@ const addUser = ({ id, name, room }) => {
   const existingUser = users.find(
     (user) => user.room === room && user.name === name
   )
+
+  if (!name || !room) {
+    return { error: 'Username and room are required.' }
+  }
   if (existingUser) {
     return { error: 'Username already taken' }
   }
@@ -14,7 +18,7 @@ const addUser = ({ id, name, room }) => {
   const user = { id, name, room }
   users.push(user)
 
-  return user
+  return { user }
 }
 
 const removeUser = (id) => {
@@ -25,13 +29,10 @@ const removeUser = (id) => {
   }
 }
 
-const getUser = (id) => {
-  users.find((user) => user.id === id)
-}
+const getUser = (id) => users.find((user) => user.id === id)
 
-const getUsersInRoom = (room) => {
+const getUsersInRoom = (room) =>
   users.filter((user) => user.room === room)
-}
 
 module.exports = {
   addUser,

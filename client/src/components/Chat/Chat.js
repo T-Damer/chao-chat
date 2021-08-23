@@ -14,7 +14,7 @@ const Chat = ({ location }) => {
   const [room, setRoom] = useState('')
   const [message, setMessage] = useState('')
   const [messages, setMessages] = useState([])
-  const ENDPOINT = 'localhost:5000'
+  const ENDPOINT = 'http://localhost:5000/'
 
   let socket = io(ENDPOINT)
 
@@ -26,10 +26,14 @@ const Chat = ({ location }) => {
     setName(name)
     setRoom(room)
 
-    socket.emit('join', { name, room }, () => {})
+    socket.emit('join', { name, room }, (error) => {
+      if (error) {
+        alert(error)
+      }
+    })
 
     return () => {
-      socket.emit('disconnect')
+      socket.disconnect()
       socket.off()
     }
   }, [ENDPOINT, location.search])

@@ -1,8 +1,8 @@
 const express = require('express')
 const socketio = require('socket.io')
 const http = require('http')
-const router = require('./router')
 const cors = require('cors')
+const router = require('./router')
 const {
   addUser,
   removeUser,
@@ -15,8 +15,8 @@ const server = http.createServer(app)
 const io = socketio(server, { cors: { origin: '*' } })
 const PORT = process.env.PORT || 5000
 
-app.use(router)
 app.use(cors())
+app.use(router)
 
 io.on('connection', (socket) => {
   console.log('new connection')
@@ -28,9 +28,9 @@ io.on('connection', (socket) => {
       room,
     })
 
-    if (error) {
-      return callback(error)
-    }
+    if (error) return callback(error)
+
+    socket.join(user.room)
 
     socket.emit('message', {
       user: 'admin',
@@ -40,8 +40,6 @@ io.on('connection', (socket) => {
       user: 'admin',
       text: `${user.name}, has joined`,
     })
-
-    socket.join(user.room)
 
     io.to(user.room).emit('roomData', {
       room: user.room,
