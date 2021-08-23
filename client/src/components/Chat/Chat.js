@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import queryString from 'query-string'
-import io from 'socket.io-client'
+import { socket } from '../../helpers/socket'
 
 import InfoBar from '../InfoBar/InfoBar'
 import Input from '../Input/Input'
@@ -14,9 +14,6 @@ const Chat = ({ location }) => {
   const [room, setRoom] = useState('')
   const [message, setMessage] = useState('')
   const [messages, setMessages] = useState([])
-  const ENDPOINT = 'http://localhost:5000/'
-
-  let socket = io(ENDPOINT)
 
   useEffect(() => {
     const { name, room } = queryString.parse(
@@ -36,11 +33,11 @@ const Chat = ({ location }) => {
       socket.disconnect()
       socket.off()
     }
-  }, [ENDPOINT, location.search])
+  }, [location.search])
 
   useEffect(() => {
     socket.on('message', (message) => {
-      setMessage([...messages, message])
+      setMessages([...messages, message])
     })
   }, [messages])
 
@@ -52,6 +49,8 @@ const Chat = ({ location }) => {
         setMessage('')
       )
     }
+
+    setMessage('')
   }
 
   return (
