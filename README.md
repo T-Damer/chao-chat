@@ -1,4 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/dacc38d8-cafe-471d-9fff-402f50d790e4/deploy-status)](https://app.netlify.com/sites/chao-chat/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/541867d4-34fe-476b-b1a9-b9c744f86d61/deploy-status)](https://app.netlify.com/sites/chao-chat/deploys)
 
 ---
 
