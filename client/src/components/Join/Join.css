@@ -66,6 +66,12 @@ body {
   transition: 0.5s;
 }
 
+.join__button:active {
+  border-radius: 12px;
+  background: #423224;
+  transition: 0.2s;
+}
+
 .mt-20 {
   margin-top: 20px;
 }
@@ -78,8 +84,4 @@ body {
   .joinInnerContainer {
     width: 90%;
   }
-}
-
-button:focus {
-  outline: 0;
 }

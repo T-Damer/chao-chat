@@ -13,7 +13,7 @@ const Join = () => {
         <h1 className="join__heading">Join</h1>
         <div>
           <input
-            placeholder=""
+            placeholder="Enter your name"
             className="join__input"
             type="text"
             onChange={(event) =>
@@ -23,7 +23,7 @@ const Join = () => {
         </div>
         <div>
           <input
-            placeholder=""
+            placeholder="Enter room name"
             className="join__input mt-20"
             type="text"
             onChange={(event) =>
