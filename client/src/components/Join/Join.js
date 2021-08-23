@@ -41,7 +41,7 @@ const Join = () => {
             className="join__button mt-20"
             type="submit"
           >
-            Enter
+            Join
           </button>
         </Link>
       </div>
