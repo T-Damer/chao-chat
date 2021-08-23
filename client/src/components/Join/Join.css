@@ -11,8 +11,11 @@ body {
   height: 100vh;
 }
 
-* {
+*,
+::before,
+::after {
   box-sizing: border-box;
+  transition: 0.5s;
 }
 
 .join__wrapper {
@@ -29,9 +32,12 @@ body {
 }
 
 .join__input {
-  border-radius: 0;
-  padding: 15px 20px;
+  border-radius: 12px;
+  padding: 1rem 2rem;
   width: 100%;
+}
+.join__input:focus {
+  border-radius: 0;
 }
 
 .join__heading {
@@ -47,10 +53,17 @@ body {
   text-decoration: none;
   background: #2979ff;
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 12px;
   display: inline-block;
   border: none;
   width: 100%;
+  transition: 0.5s;
+}
+
+.join__button:hover {
+  border-radius: 0;
+  background: #4974be;
+  transition: 0.5s;
 }
 
 .mt-20 {
