@@ -15,8 +15,8 @@ const server = http.createServer(app)
 const io = socketio(server, { cors: { origin: '*' } })
 const PORT = process.env.PORT || 5000
 
-app.use(cors())
 app.use(router)
+app.use(cors())
 
 io.on('connection', (socket) => {
   console.log('new connection')

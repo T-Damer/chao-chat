@@ -26,8 +26,6 @@ const Chat = ({ location }) => {
     setName(name)
     setRoom(room)
 
-    console.log(socket)
-
     socket.emit('join', { name, room }, () => {})
 
     return () => {
@@ -51,8 +49,6 @@ const Chat = ({ location }) => {
       )
     }
   }
-
-  console.log(message, messages)
 
   return (
     <div className="container__wrapper">
