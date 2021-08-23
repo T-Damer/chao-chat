@@ -6,6 +6,16 @@
 
 ![wa6OA3ugDn](https://user-images.githubusercontent.com/49658988/130487246-b33593a0-9aa2-4567-8b47-1ce4bed3a1d8.gif)
 
+# Local launch
+
+0. Clone repo: `git clone https://github.com/T-Damer/socket-chat.git`
+1. `cd socket-chat`
+2. `cd server`
+3. Install dependencies with `yarn` or `npm install`
+4. run the server with `yarn start` | `npm run start` (localhost:5000)
+5. Repeat 1-3 this with `client` directory
+6. Check your `localhost:3000`, must be working
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -26,4 +36,6 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
+
+<a href="https://www.buymeacoffee.com/tdamer"><img src="https://img.buymeacoffee.com/button-api/?text=Support me with a coffee&emoji=☕️&slug=tdamer&button_colour=ffcc33&font_colour=000&font_family=Lato&outline_colour=000&coffee_colour=000"></a>
