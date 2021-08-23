@@ -1,3 +1,7 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/dacc38d8-cafe-471d-9fff-402f50d790e4/deploy-status)](https://app.netlify.com/sites/chao-chat/deploys)
+
+---
+
 # Socket Chat
 
 ![LOGO](client/public/logo512.png)
