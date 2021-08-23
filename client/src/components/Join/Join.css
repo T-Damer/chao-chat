@@ -51,7 +51,7 @@ body {
   color: #fff !important;
   text-transform: uppercase;
   text-decoration: none;
-  background: #2979ff;
+  background: #caa47b;
   padding: 20px;
   border-radius: 12px;
   display: inline-block;
@@ -62,7 +62,7 @@ body {
 
 .join__button:hover {
   border-radius: 0;
-  background: #4974be;
+  background: #664c37;
   transition: 0.5s;
 }
 
